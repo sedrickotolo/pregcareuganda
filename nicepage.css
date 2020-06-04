@@ -26533,13 +26533,14 @@ a.u-link.u-text-hover-grey-90:hover {
 .u-header .u-menu-1 {margin: -73px 0 0 auto}
 .u-header .u-nav-1 {font-size: 1.25rem; letter-spacing: 0; font-weight: 700; text-transform: none; background-image: none}
 .u-header .u-nav-2 {font-size: 1.25rem}
-.u-header .u-social-icons-1 {white-space: nowrap; height: 32px; min-height: 16px; width: 149px; min-width: 85px; margin: 20px 0 6px auto}
+.u-header .u-social-icons-1 {white-space: nowrap; height: 32px; min-height: 16px; width: 137px; min-width: 73px; margin: 20px 0 6px auto}
 .u-header .u-icon-1 {height: 100%}
 .u-header .u-icon-2 {height: 100%}
 .u-header .u-icon-3 {height: 100%}
 .u-header .u-icon-4 {height: 100%} 
 @media (max-width: 1199px){ .u-header {min-height: 80px}
-.u-header .u-sheet-1 {min-height: 141px} }
+.u-header .u-sheet-1 {min-height: 141px}
+.u-header .u-image-1 {animation-duration: 9250ms} }
 
 
 
