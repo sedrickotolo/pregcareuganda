@@ -1,2 +1,0 @@
-# sedrickotolo.github.io
- 
