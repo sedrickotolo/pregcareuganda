@@ -1,0 +1,211 @@
+/*login page css */
+
+.body-login{
+  text-align: center;
+  margin: 100px;
+  background-color: #ffffff;
+ 
+
+}
+#sidebar-color{
+  background-color: #000000;
+}
+/*profile */
+
+.profile{
+  color: whitesmoke;
+}
+.title-login{
+  margin: 20px;
+  
+
+}
+.login-pane{
+  margin-left: 300px;
+  border-radius: 20px;
+  width: 500px;
+  height: auto;
+  background-color: rgb(203, 220, 221);
+  margin-bottom: 20px;
+
+
+}
+.logout_cla a{
+  padding: 20px;
+}
+
+.login-pane1{
+  margin-left: 300px;
+  border-radius: 20px;
+  width: 500px;
+  height: auto;
+  background-color: rgb(203, 220, 221);
+  margin-bottom: 20px;
+  
+
+
+}
+.user-details{
+  padding-top: 20px;
+  
+ 
+
+}
+.user-details input{
+  margin: 10px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.user-details1 input{
+  margin: 10px;
+  width: 300px;
+  border-radius: 10px;
+}
+#submit{
+  width: 100px;
+  margin: 20px;
+}
+.img-image img{
+  width: 200px;
+  height: auto;
+  margin-bottom: 30px;
+
+}
+
+
+
+
+
+/*Index page css */
+.preg-title{
+  text-align: center;
+}
+
+#blue-home-pane{
+  height: 400px;
+}
+
+#calendar{
+  height: 150px;
+}
+#card-home-body{
+  height: 25em;
+}
+.card-body h4{
+  text-align: center;
+}
+.card-body img{
+  align-items: center;
+  margin-left: 100px;
+}
+
+.updates-home{
+  text-align: center;
+  padding-top: 20px;
+}
+
+#green-section-home{
+  width: 100px;
+}
+
+
+/*Dr management */
+
+.main-dr-section{
+  width: 100%;
+  height: 450px;
+  background-color: lavender;
+  border-radius: 10px;
+  padding: 10px;
+}
+.dr-add-div{
+  position: absolute;
+  margin-left: 150px;
+  height: 430px;
+  width: 460px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(249, 252, 251);
+}
+.updates-div{
+  padding: 0px;
+  margin-top: 100px;
+}
+.updates-div div{
+  color:green;
+  width: 110px;
+  height: 40px;
+  background-color: hotpink;
+  padding: 5px;
+
+}
+.dr-add-search{
+  position: absolute;
+  margin-left: 660px;
+  background-color: rgb(196, 236, 255);
+  width: 300px;
+  height: 430px;
+  margin-top: 0px;
+  text-align: center;
+  padding: 10px;
+}
+.tables{
+  
+}
+
+.card > button{
+  width: 100px;
+}
+.form-dr{
+  clear: both;
+}
+.form-dr input{
+  width: 100%;
+  clear: left;
+}
+
+/* PregTracker*/
+
+#d_inputs{
+  margin: 0px;
+  width: 100%;
+  border-radius: 5px;
+}
+.device-add button{
+  margin-top: 15px;
+  align-items: center;
+  text-align: center;
+  background-color: greenyellow;
+  border-radius: 5px;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+th,
+td {
+  padding: 10px 15px;
+}
+thead {
+  background: #395870;
+  color: #fff;
+}
+th {
+  font-weight: bold;
+}
+.card{
+  padding: 20px;
+}
+#card-graph{
+  background-color: green;
+}
+/*
+#card-graph2{
+  background-color: rgb(111, 151, 204);
+  border-radius: 10px;
+}
+*/
+#card-user{
+  background-color: #e9f5f7;
+}

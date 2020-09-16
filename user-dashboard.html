@@ -1,0 +1,716 @@
+
+<!--
+<?php 
+session_start();
+?>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>Pregcare | Mother</title>
+
+   <!-- My style -->
+ <link rel="stylesheet" href="dist/css/my-styles.css">
+ <link rel="stylesheet" href="dist/css/index4.css">
+ <script src="https://cdn.jsdelivr.net/npm/waziup-js@2.0.0-alpha.10/lib/Waziup.js"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- IonIcons -->
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to to the body tag
+to get the desired effect
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index.html" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="contact.html" class="nav-link">Contact</a>
+      </li>
+    </ul>
+
+    <!-- SEARCH FORM -->
+    <form class="form-inline ml-3">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-comments"></i>
+          <span class="badge badge-danger navbar-badge">3</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Brad Diesel
+                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Call me whenever you can...</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  John Pierce
+                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">I got your message bro</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Nora Silvester
+                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">The subject goes here</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+        </div>
+      </li>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> 8 friend requests
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i
+            class="fas fa-th-large"></i></a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" id="sidebar-color">
+    <!-- Brand Logo -->
+    <a href="index.html" class="brand-link">
+      <img src="docs/assets/img/preg-favicon.png" alt="pregcare logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">Pregcare</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar" >
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Welcome <br><?php echo $_SESSION["name"]; ?>Sedrick</a>
+           <!-- <div class="profile">
+                <h5>Profile Details</h5>
+                <p>Oethopedics</p>
+            </div>
+          -->
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Mother Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <!--
+              <li class="nav-item">
+                <a href="./user-dashboard.php" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Daily Counts</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./update-profile.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Update Profile</p>
+                </a>
+              </li>
+            </ul>-->
+          </li><li class="nav-item has-treeview menu-open">
+            <a href="dr-dashboard.html" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dr Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+         
+          </li>
+          
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid"><section>
+
+      </section>
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">My Preg-Tracker Daily Count</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right      ">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>eq
+              <li class="breadcrumb-item active"> Pregcare Mother Dashboard </li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-lg-4 col-8">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+
+<!--script for the wazihub api-->
+<script>
+   Waziup.ApiClient.instance.basePath = "https://api.waziup.io/api/v2";
+  var api = new Waziup.SensorsApi();
+  api
+    .getSensorsData({
+      device_id: "UGB-PILOTS_Sensor200",
+      sensor_id: "TP"
+    })
+    .then(sens => {
+      document.getElementById("device_value").innerHTML =
+        "Temp " + sens[sens.length - 1].value + "C";
+    });
+</script>
+    <div >
+      <h3 id="device_value"> Loading...</h3>
+ 
+    </div>
+              <p>Current Temperature</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>78 BPM<sup style="font-size: 20px">%</sup></h3>
+        
+                <p>Heart Beat Per Minute</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>GPS</h3>
+        
+                <p>N839.34S382.44</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-6">
+            <!-- small box 
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>65</h3>
+        
+                <p>Current Body Pressure</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>-->
+
+          <div class="col-lg-4 col-6">
+            <!-- small box 
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>Updates</h3>
+        
+                <p> <BR> Well-done Your body temperature is normal! Well-done</p>
+                
+             
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              
+            </div>
+          </div>-->
+
+          <div class="col-lg-4 col-6">
+            <!-- small box 
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>Health Tips<sup style="font-size: 20px"></sup></h3>
+                <p>To Maintain good and proper pregnancy, eat good vegetables</p>
+              
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>-->
+
+        
+
+            
+          </div>
+          <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+      </div><hr>
+
+      <div class="col-lg-12 col-12">
+        <!-- small box -->
+        <div class="main-content">
+          <section class="section">
+              <div class="row row-deck">
+                  <div class="col-lg-12"></div>
+                  <div class="card" id="card-graph">
+                      <div class="card-header">Choose Pregcare</div>
+                      <div class="card-body">
+                          <div class="form-group row">
+                              <div class="col-sm">
+                                  <label for="select">Devices</label>
+                                  <select class="form-control" id="selectDevice" onchange="onDeviceSelect()">
+                                  </select>
+                              </div>
+                              <div class="col-sm">
+                                  <label for="select">Sensors</label>
+                                  <select class="form-control" id="selectSensor" onchange="onSensorSelect()">
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+
+
+              <div class="row row-deck">
+                  <div class="col-lg-12">
+                      <div class="card">
+                          <div class="card-header">
+                              <h4>Real Time Graph of PregTracker </h4>
+                          </div>
+                          <div class="card-body" id="card-graph2">
+                            
+                              <canvas id="pk" height="400" width="900px">Loading...</canvas>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+
+          </section>
+      </div>
+        Graph to Display <br> Valeues
+        <p>In the United Nation’s estimate, 800 women die every day from preventable pregnancy related complications. 
+          Unfortunately, 99% occur in developing countries. The consequences of pregnancy related mothers struggle with 
+          Pre-eclampsia failing to receive timely care. Midwives and doctors struggle in the rural and hard to reach areas 
+          unable to monitor health vitals of pregnant mothers sometimes postponing or cancelling critical procedures. 
+        </p><br>
+          <p>
+          A research by World Health Organization shows that timely monitoring of health vitals can help save lives of women
+           and their unborn babies. Maternal mortality in developing countries is associated to delays in reaching health care
+           facilities in time and receiving treatment due to inadequate equipment’s. Uganda’s maternal Mortality Ration is 366 
+           per 100,0000 live births is one of the highest in the world and direct causes are estimated to be responsible for 75 
+           to 80 percent of all maternal deaths resulting from preventable pregnancy complications.
+          </p>
+      </div>
+
+
+
+
+
+      <!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+ <!-- Small boxes (Stat box) -->
+ <div class="row">
+
+  <!-- ./col -->
+  
+  <!-- ./col -->
+  
+  <!-- ./col -->
+  
+  <!-- ./col -->
+</div>
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2020 <a href="http://pregcareug.com">PregcareUG</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 3.0.5
+    </div>
+  </footer>
+</div>
+
+
+<script>
+  Waziup.ApiClient.instance.basePath = "https://api.waziup.io/api/v2";
+  var devicesApi = new Waziup.DevicesApi();
+  var sensorsApi = new Waziup.SensorsApi();
+  // default device values
+  var device_id = "UGB-PILOTS_Sensor200";
+  var sensor_id = "TP";
+  var sensorValues = [];
+  var graphLabel = [];
+  var myChart;
+
+  // initializing
+  loadDevices();
+  loadSensors();
+
+  function loadDevices() {
+      // list of devices
+      var selectDevice = document.getElementById("selectDevice");
+      devicesApi.getDevices("waziup").then(devices => {
+          for (device of devices) {
+              // create and populate an option for the select
+              var opt = document.createElement("option");
+              opt.value = device.id;
+              opt.innerHTML = device.id;
+
+              // then append it to the select element
+              selectDevice.appendChild(opt);
+          }
+      });
+  }
+
+  function loadSensors() {
+      // list of sensors
+      var selectSensor = document.getElementById("selectSensor");
+      // reset sensor values
+      sensorValues = [];
+      devicesApi.getDeviceSensors(device_id).then(sensors => {
+          sensors.forEach((sensor, index) => {
+              // set sensor_id to the first sensor
+              if (index == 0) {
+                  sensor_id = sensor.id;
+              }
+              // create and populate an option for the select
+              var opt = document.createElement("option");
+              opt.value = sensor.id;
+              opt.innerHTML = sensor.id;
+
+              // then append it to the select element
+              selectSensor.appendChild(opt);
+
+              // get sensor values for each sensor
+              sensorsApi
+                  .getSensorsData({
+                      device_id,
+                      sensor_id: sensor.id
+                  })
+                  .then(values => {
+                      var data = [];
+
+                      // reset graph label
+                      if (values.length > 0) graphLabel = [];
+
+                      // add each sensor values in an array
+                      for (value of values) {
+                          data.push(value.value);
+                          if (value.timestamp) graphLabel.push(value.timestamp);
+                      }
+
+                      //
+                      if (data.length > 0)
+                          sensorValues.push({
+                              label: sensor.id + (sensor.unit ? "(" + sensor.unit + ")" : ""),
+                              data: data,
+
+                              backgroundColor: [
+                                  'black',
+                                  'yellow',
+                                  'Red',
+                                  'green',
+                                  'blue',
+                                  'white',
+                                  'Red',
+                                  'Blue',
+                                  'Yellow',
+                                  'Green',
+                                  'Purple',
+                                  'Orange',
+                                  'green',
+                                  'blue',
+                                  'white',
+                                  'Red',
+                                  'Blue',
+                                  'Yellow',
+                                  'Green',
+                                  'Red',
+                                  'Yellow'
+                              ],
+                              borderColor: dynamicColors()
+                          });
+                  })
+                  .finally(values => {
+                      loadGraph();
+                  });
+          });
+          loadValues();
+      });
+  }
+
+  // select device
+
+  var selectedDevice = 'IncubatorINCOTECH'
+  device_id = selectedDevice;
+  // reset sensors list
+  loadSensors();
+
+
+  // select sensor
+  var selectedSensor = 'huminco'
+  sensor_id = selectedSensor;
+  loadValues();
+
+
+  // random color generator
+  var dynamicColors = function() {
+      var r = Math.floor(Math.random() * 255);
+      var g = Math.floor(Math.random() * 255);
+      var b = Math.floor(Math.random() * 255);
+      return "rgb(" + r + "," + g + "," + b + ")";
+  };
+
+  // load device and sensor values
+  function loadValues() {
+      // device context
+      devicesApi.getDevice(device_id).then(device => {
+          document.getElementById("device_name_context").innerHTML =
+              "Name : " + device.name;
+          document.getElementById("device_owner").innerHTML =
+              "Owner : " + device.owner;
+          document.getElementById("device_domain").innerHTML =
+              "Domain : " + device.domain;
+          document.getElementById("device_gateway").innerHTML =
+              "Gateway : " + device.gateway_id;
+      });
+
+      // device value
+      sensorsApi.getSensor(device_id, sensor_id).then(device => {
+          document.getElementById("device_value_id").innerHTML = device.id;
+          document.getElementById("device_name_value").innerHTML =
+              "Name : " + device.name;
+          document.getElementById("device_last_value").innerHTML =
+              "Last Value : " + device.value.value;
+          document.getElementById("device_quantity_kind").innerHTML =
+              "Quantity Kind : " + device.quantity_kind;
+          document.getElementById("device_sensing_device").innerHTML =
+              "Sensing Device : " + device.sensing_device;
+          document.getElementById("device_unit").innerHTML =
+              "Unit : " + device.unit;
+      });
+  }
+
+  // load graph with device values
+  function loadGraph() {
+      // if chart already exists update dataset
+      if (myChart) {
+          myChart.data.labels = graphLabel;
+          myChart.data.datasets = sensorValues;
+          myChart.update();
+      } else {
+          var ctx = document.getElementById("pk").getContext("2d");
+          myChart = new Chart(ctx, {
+              type: "pie",
+              data: {
+                  labels: graphLabel,
+                  datasets: sensorValues
+              },
+              options: {
+                  responsive: false
+              }
+          });
+      }
+  }
+
+  // map
+  var mymap = L.map("mapid").setView([-1.97, 30.1], 8);
+  L.tileLayer(
+      "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+          attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+          maxZoom: 8,
+          id: "mapbox.streets",
+          accessToken: "pk.eyJ1IjoiY2R1cG9udDIiLCJhIjoiY2pnZTVkZ2xsMGxyZTJ4cjA5dDZ4cjNneSJ9.NJT7CULfcY0mjeavffR_vg"
+      }
+  ).addTo(mymap);
+
+  var markers = [];
+  devicesApi
+      .getDevices({
+          limit: 1000
+      })
+      .then(devices => {
+          for (device of devices) {
+              if (device.location) {
+                  L.marker([
+                      device.location.latitude,
+                      device.location.longitude
+                  ]).addTo(mymap);
+              }
+          }
+      });
+</script>
+
+
+
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE -->
+<script src="dist/js/adminlte.js"></script>
+
+
+   <!-- JS Libraies wazi-->
+   <script src="assets/modules/jquery.sparkline.min.js"></script>
+   <script src="assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
+   <script src="assets/modules/summernote/summernote-bs4.js"></script>
+   <script src="assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+
+   <!-- Page Specific JS File -->
+   <script src="js/page/index.js"></script>
+
+   <!-- Template JS File -->
+   <script src="js/scripts.js"></script>
+   <script src="js/custom.js"></script>
+
+
+
+<!-- OPTIONAL SCRIPTS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<script src="dist/js/demo.js"></script>
+<script src="dist/js/pages/dashboard3.js"></script>
+</body>
+</html>
