@@ -474,8 +474,8 @@ to get the desired effect
   var devicesApi = new Waziup.DevicesApi();
   var sensorsApi = new Waziup.SensorsApi();
   // default device values
-  var device_id = "UGB-PILOTS_Sensor200";
-  var sensor_id = "TP";
+  var device_id = "PregCare";
+  var sensor_id = "Temperature";
   var sensorValues = [];
   var graphLabel = [];
   var myChart;
@@ -579,14 +579,15 @@ to get the desired effect
 
   // select device
 
-  var selectedDevice = 'IncubatorINCOTECH'
+  var selectedDevice = 'PregCare'
   device_id = selectedDevice;
   // reset sensors list
   loadSensors();
 
 
   // select sensor
-  var selectedSensor = 'huminco'
+  var selectedSensor = 'Temperature'
+ 
   sensor_id = selectedSensor;
   loadValues();
 
