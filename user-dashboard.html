@@ -250,6 +250,7 @@ to get the desired effect
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+    
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
@@ -260,7 +261,7 @@ to get the desired effect
             <div class="small-box bg-info">
               <div class="inner">
 
-<!--script for the wazihub api-->
+  <!--script for the wazihub api-->
 <script>
    Waziup.ApiClient.instance.basePath = "https://api.waziup.io/api/v2";
   var api = new Waziup.SensorsApi();
@@ -474,8 +475,8 @@ to get the desired effect
   var devicesApi = new Waziup.DevicesApi();
   var sensorsApi = new Waziup.SensorsApi();
   // default device values
-  var device_id = "PregCare";
-  var sensor_id = "Temperature";
+  var device_id = "UGB-PILOTS_Sensor200";
+        var sensor_id = "TP";
   var sensorValues = [];
   var graphLabel = [];
   var myChart;
@@ -640,7 +641,7 @@ to get the desired effect
       } else {
           var ctx = document.getElementById("pk").getContext("2d");
           myChart = new Chart(ctx, {
-              type: "pie",
+              type: "line",
               data: {
                   labels: graphLabel,
                   datasets: sensorValues

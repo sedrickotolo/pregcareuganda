@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--   Tue, 07 Jan 2020 03:33:27 GMT -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Pregcare  &mdash; Dashboard</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/modules/fontawesome/css/all.min.css">
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="assets/modules/jqvmap/dist/jqvmap.min.css">
+    <link rel="stylesheet" href="assets/modules/summernote/summernote-bs4.css">
+    <link rel="stylesheet" href="assets/modules/owlcarousel2/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/modules/owlcarousel2/dist/assets/owl.theme.default.min.css">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/components.min.css">
+
+    <!-- My style -->
+ <link rel="stylesheet" href="dist/css/my-styles.css">
+ <link rel="stylesheet" href="dist/css/index4.css">
+ <script src="https://cdn.jsdelivr.net/npm/waziup-js@2.0.0-alpha.10/lib/Waziup.js"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- IonIcons -->
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+</head>
+
+<body class="layout-4">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            <div class="navbar-bg"></div>
+
+            <!-- Start app top navbar -->
+            <nav class="navbar navbar-expand-lg main-navbar">
+                <h1>My Preg-Tracker Daily Count</h1>
+                
+            </nav>
+            
+
+            <!-- Start main left sidebar menu -->
+            <div class="main-sidebar sidebar-style-3">
+                <aside id="sidebar-wrapper">
+                    <div class="sidebar-brand">
+                        <a href="index.html">Home</a>
+                    </div>
+
+                    <ul class="sidebar-menu">
+                       
+                        <li class="dropdown active">
+                            <a href="indexdash.html" class="nav-link has-dropdown"><span>Mother Dashboard</span></a>
+
+                        </li>
+              
+
+                        <li>
+                            <a class="nav-link" href="indexdash.html"> <span>Dr Dashboard</span></a>
+                        </li>
+                    
+                        
+                    </ul>
+                    
+                </aside>
+            </div>
+
+            <!-- Start app main Content -->
+            <div class="main-content">
+                
+                <section class="section">
+                    <!---->
+                    <div class="row row-deck">
+                        <div class="col-lg-12"></div>
+                        <div class="card">
+                            <div class="card-header">select</div>
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <div class="col-sm">
+                                        <label for="select">Devices</label>
+                                        <select class="form-control" id="selectDevice" onchange="onDeviceSelect()">
+                                        </select>
+                                    </div>
+                                    <div class="col-sm">
+                                        <label for="select">Sensors</label>
+                                        <select class="form-control" id="selectSensor" onchange="onSensorSelect()">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row row-deck">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Graph showing Humidity and Tempreator for Incubator </h4>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="pk" height="400" width="900px">Loading...</canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+            </div>
+
+            <!-- Start app Footer part -->
+            <footer class="main-footer">
+                <div class="footer-left">
+                    <div class="bullet"></div> <a href="templateshub.net">Go Smart, Go Incotech Smart Incubator the one you can trust.</a>
+                </div>
+                <div class="footer-right">
+
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- General JS Scripts -->
+    <script src="assets/bundles/lib.vendor.bundle.js"></script>
+    <script src="js/CodiePie.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/waziup-js@2.0.0-alpha.10/lib/Waziup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+
+    <script>
+        Waziup.ApiClient.instance.basePath = "https://api.waziup.io/api/v2";
+        var devicesApi = new Waziup.DevicesApi();
+        var sensorsApi = new Waziup.SensorsApi();
+        // default device values
+        var device_id = "UGB-PILOTS_Sensor200";
+        var sensor_id = "TP";
+        var sensorValues = [];
+        var graphLabel = [];
+        var myChart;
+
+        // initializing
+        loadDevices();
+        loadSensors();
+
+        function loadDevices() {
+            // list of devices
+            var selectDevice = document.getElementById("selectDevice");
+            devicesApi.getDevices("waziup").then(devices => {
+                for (device of devices) {
+                    // create and populate an option for the select
+                    var opt = document.createElement("option");
+                    opt.value = device.id;
+                    opt.innerHTML = device.id;
+
+                    // then append it to the select element
+                    selectDevice.appendChild(opt);
+                }
+            });
+        }
+
+        function loadSensors() {
+            // list of sensors
+            var selectSensor = document.getElementById("selectSensor");
+            // reset sensor values
+            sensorValues = [];
+            devicesApi.getDeviceSensors(device_id).then(sensors => {
+                sensors.forEach((sensor, index) => {
+                    // set sensor_id to the first sensor
+                    if (index == 0) {
+                        sensor_id = sensor.id;
+                    }
+                    // create and populate an option for the select
+                    var opt = document.createElement("option");
+                    opt.value = sensor.id;
+                    opt.innerHTML = sensor.id;
+
+                    // then append it to the select element
+                    selectSensor.appendChild(opt);
+
+                    // get sensor values for each sensor
+                    sensorsApi
+                        .getSensorsData({
+                            device_id,
+                            sensor_id: sensor.id
+                        })
+                        .then(values => {
+                            var data = [];
+
+                            // reset graph label
+                            if (values.length > 0) graphLabel = [];
+
+                            // add each sensor values in an array
+                            for (value of values) {
+                                data.push(value.value);
+                                if (value.timestamp) graphLabel.push(value.timestamp);
+                            }
+
+                            //
+                            if (data.length > 0)
+                                sensorValues.push({
+                                    label: sensor.id + (sensor.unit ? "(" + sensor.unit + ")" : ""),
+                                    data: data,
+
+                                    backgroundColor: [
+                                        'black',
+                                        'yellow',
+                                        'Red',
+                                        'green',
+                                        'blue',
+                                        'white',
+                                        'Red',
+                                        'Blue',
+                                        'Yellow',
+                                        'Green',
+                                        'Purple',
+                                        'Orange',
+                                        'green',
+                                        'blue',
+                                        'white',
+                                        'Red',
+                                        'Blue',
+                                        'Yellow',
+                                        'Green',
+                                        'Red',
+                                        'Yellow'
+                                    ],
+                                    borderColor: dynamicColors()
+                                });
+                        })
+                        .finally(values => {
+                            loadGraph();
+                        });
+                });
+                loadValues();
+            });
+        }
+
+        // select device
+
+        var selectedDevice = 'PregCare'
+        device_id = selectedDevice;
+        // reset sensors list
+        loadSensors();
+
+
+        // select sensor
+        var selectedSensor = 'Temperature'
+        sensor_id = selectedSensor;
+        loadValues();
+
+
+        // random color generator
+        var dynamicColors = function() {
+            var r = Math.floor(Math.random() * 255);
+            var g = Math.floor(Math.random() * 255);
+            var b = Math.floor(Math.random() * 255);
+            return "rgb(" + r + "," + g + "," + b + ")";
+        };
+
+        // load device and sensor values
+        function loadValues() {
+            // device context
+            devicesApi.getDevice(device_id).then(device => {
+                document.getElementById("device_name_context").innerHTML =
+                    "Name : " + device.name;
+                document.getElementById("device_owner").innerHTML =
+                    "Owner : " + device.owner;
+                document.getElementById("device_domain").innerHTML =
+                    "Domain : " + device.domain;
+                document.getElementById("device_gateway").innerHTML =
+                    "Gateway : " + device.gateway_id;
+            });
+
+            // device value
+            sensorsApi.getSensor(device_id, sensor_id).then(device => {
+                document.getElementById("device_value_id").innerHTML = device.id;
+                document.getElementById("device_name_value").innerHTML =
+                    "Name : " + device.name;
+                document.getElementById("device_last_value").innerHTML =
+                    "Last Value : " + device.value.value;
+                document.getElementById("device_quantity_kind").innerHTML =
+                    "Quantity Kind : " + device.quantity_kind;
+                document.getElementById("device_sensing_device").innerHTML =
+                    "Sensing Device : " + device.sensing_device;
+                document.getElementById("device_unit").innerHTML =
+                    "Unit : " + device.unit;
+            });
+        }
+
+        // load graph with device values
+        function loadGraph() {
+            // if chart already exists update dataset
+            if (myChart) {
+                myChart.data.labels = graphLabel;
+                myChart.data.datasets = sensorValues;
+                myChart.update();
+            } else {
+                var ctx = document.getElementById("pk").getContext("2d");
+                myChart = new Chart(ctx, {
+                    type: "bar",
+                    data: {
+                        labels: graphLabel,
+                        datasets: sensorValues
+                    },
+                    options: {
+                        responsive: false
+                    }
+                });
+            }
+        }
+
+        // map
+        var mymap = L.map("mapid").setView([-1.97, 30.1], 8);
+        L.tileLayer(
+            "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+                attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+                maxZoom: 8,
+                id: "mapbox.streets",
+                accessToken: "pk.eyJ1IjoiY2R1cG9udDIiLCJhIjoiY2pnZTVkZ2xsMGxyZTJ4cjA5dDZ4cjNneSJ9.NJT7CULfcY0mjeavffR_vg"
+            }
+        ).addTo(mymap);
+
+        var markers = [];
+        devicesApi
+            .getDevices({
+                limit: 1000
+            })
+            .then(devices => {
+                for (device of devices) {
+                    if (device.location) {
+                        L.marker([
+                            device.location.latitude,
+                            device.location.longitude
+                        ]).addTo(mymap);
+                    }
+                }
+            });
+    </script>
+
+    <!-- JS Libraies -->
+    <script src="assets/modules/jquery.sparkline.min.js"></script>
+    <script src="assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
+    <script src="assets/modules/summernote/summernote-bs4.js"></script>
+    <script src="assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+
+    <!-- Page Specific JS File -->
+    <script src="js/page/index.js"></script>
+
+    <!-- Template JS File -->
+    <script src="js/scripts.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+<!--   Tue, 07 Jan 2020 03:35:12 GMT -->
+
+</html>
