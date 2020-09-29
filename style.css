@@ -1,0 +1,197 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    color: blue;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: rgb(245, 236, 236);
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.imgg {
+    float: left;
+    height: 30%;
+    width: 22.5%;
+    margin-left: 40px;
+    border-style: groove;
+    color: black;
+}
+
+img {
+    border-radius: 50%;
+}
+
+.mtab_content {
+    width: 25%;
+    height: 20%;
+}
+
+
+/* 
+.wrapper {
+  display: flex;
+  align-items: stretch;
+} */
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+
+/* The side navigation menu */
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #e9edf5;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+
+/* Sidebar links */
+
+.sidebar a {
+    display: block;
+    color: rgb(15, 15, 15);
+    padding: 16px;
+    text-decoration: none;
+}
+
+
+/* Active/current link */
+
+.sidebar li.active {
+    background-color: #00bcd4;
+    color: rgb(179, 36, 36);
+}
+
+
+/* Links on mouse-over */
+
+.sidebar li:hover:not(.active) {
+    background-color: rgb(12, 157, 224);
+    color: rgb(255, 253, 253);
+}
+
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+
+.content {
+    margin-left: 200px;
+    padding: 10px 16px;
+    background-image: url("chick.jpg");
+}
+
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        height: auto;
+        position: relative;
+    }
+    .sidebar li {
+        float: left;
+        list-style: none;
+        width: 100%;
+    }
+    div.content {
+        margin-left: 0;
+    }
+    img {
+        border-radius: 50%;
+        height: 50px;
+        width: 40px;
+    }
+    .mtab_content {
+        width: 25%;
+        height: 20%;
+    }
+}
+
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+
+@media screen and (max-width: 400px) {
+    .sidebar li {
+        text-align: center;
+        float: none;
+    }
+    img {
+        height: 30px;
+        width: 25px;
+        border-radius: 50%;
+    }
+    .mtab_content {
+        width: 25%;
+        height: 20%;
+    }
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+.mtab_content {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+.preg {
+    width: auto;
+    height: 100px;
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imo {
+    width: 300px;
+    height: 400px;
+    padding: 3px;
+    display: block;
+    /*margin-left: auto;*/
+    margin-right: auto;
+}
+
+.log {
+    width: 25%;
+    height: 20%;
+    float: left;
+    padding: 40px;
+    display: block;
+    margin-left: 30px;
+    margin-right: auto;
+}
+
+.list-group-item.active {
+    background-color: #41c553;
+}
+
+.list-group {
+    width: 50%;
+    height: auto;
+    float: left;
+}
