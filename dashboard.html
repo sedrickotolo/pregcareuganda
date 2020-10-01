@@ -112,7 +112,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Graph showing Humidity and Tempreator for Incubator </h4>
+                                    <h4>Graph for Pregcare </h4>
                                 </div>
                                 <div class="card-body">
                                     <canvas id="pk" height="400" width="900px">Loading...</canvas>
@@ -319,7 +319,7 @@
             } else {
                 var ctx = document.getElementById("pk").getContext("2d");
                 myChart = new Chart(ctx, {
-                    type: "bar",
+                    type: "line",
                     data: {
                         labels: graphLabel,
                         datasets: sensorValues

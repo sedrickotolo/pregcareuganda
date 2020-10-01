@@ -4,7 +4,7 @@ body {
     height: 100%;
     width: 100%;
     background-color: #ffffff;
-    color: blue;
+    color: rgb(18, 174, 221);
 }
 
 p {
@@ -97,7 +97,7 @@ img {
 .content {
     margin-left: 200px;
     padding: 10px 16px;
-    background-image: url("chick.jpg");
+    /*background-image: url("chick.jpg");*/
 }
 
 
