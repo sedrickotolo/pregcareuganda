@@ -110,7 +110,7 @@
         var devicesApi = new Waziup.DevicesApi();
         var sensorsApi = new Waziup.SensorsApi();
         // default device values
-        var device_id = "PregCare";
+        var device_id = "IncubatorINCOTECH";
         var sensor_id = "TP";
         var sensorValues = [];
         var graphLabel = [];
@@ -122,11 +122,11 @@
 
         function loadDevices() {
             // list of devices
-            var selectDevice = document.getElementsByName("PregCare");
+            var selectDevice = document.getElementsByName("IncubatorINCOTECH");
             devicesApi.getDevices("waziup").then(devices => {
                 for (device of devices) {
                     // create and populate an option for the select
-                    var opt = document.createElement("PregCare");
+                    var opt = document.createElement("IncubatorINCOTECH");
                     opt.value = device.id;
                     opt.innerHTML = device.id;
 
@@ -195,7 +195,7 @@
         // select device
         function onDeviceSelect() {
             var devicesList = document.getElementById("selectDevice");
-            var PregCare =
+            var IncubatorINCOTECH =
                 devicesList.options[devicesList.selectedIndex].value;
             device_id = PregCare;
             // reset sensors list
